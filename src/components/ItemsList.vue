@@ -3,14 +3,24 @@ import axios from "axios"
 import { defineComponent, onMounted, ref } from 'vue'
 
 export default defineComponent({
-//   'https://api.publicapis.org/entries'
   setup() {
     const data = ref({});
 
+    const getData = () => {
+      axios.get('https://api.publicapis.org/entries')
+      .then((response) => {
+          const { entries } = response.data;
+          console.log({entries});
+          data.value = entries;
+      })
+    }
+
     onMounted(() => {
       console.log('component did mounted');
+      getData();
     })
     return { data };
+
   }
 
 
