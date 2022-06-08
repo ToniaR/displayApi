@@ -2,39 +2,9 @@
 import axios from "axios"
 import { defineComponent, onMounted, ref, reactive } from 'vue'
 
-interface Item {
-  API: string,
-  Auth: string,
-  Category: string,
-  Cors: string,
-  Description: string,
-  HTTPS: boolean
-  Link: string
-}
-
-type Example = {
-  entries: Item[];
-};
-
 export default defineComponent({
-  setup() {
-    let items = ref<Item[]>([]);
-
-    const getData = () => {
-      axios.get('https://api.publicapis.org/entries')
-      .then((response) => {
-          const { entries }: Example  = response.data;
-          items.value = entries;
-      })
-    }
-
-    onMounted(() => {
-      console.log('component did mounted');
-      getData();
-    })
-    return { items };
-
-  }  
+  // add typing to this props
+  props: ['items']
 })
 
 </script>
