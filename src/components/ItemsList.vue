@@ -1,9 +1,7 @@
 <script lang="ts">
-import axios from "axios"
-import { defineComponent, onMounted, ref, reactive } from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  // add typing to this props
   props: ['items']
 })
 
