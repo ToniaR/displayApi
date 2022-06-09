@@ -1,0 +1,15 @@
+@mixin flexbox($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin input {
+    border-radius: 13px;
+    border: none;
+    margin-bottom: 1rem;
+    padding: 0 15px;
+    color: $inputTextColor;
+    box-sizing: border-box;
+}

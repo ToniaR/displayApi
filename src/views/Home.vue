@@ -53,12 +53,62 @@ export default defineComponent({
 </script>
 
 <template>
-  <h1>This is home</h1>
-  <div>
-    <input type="text" v-model="search" placeholder="Search API ..." />
-    <select name="" id="" v-model="selectedCategory">
-      <option v-for="(category, index) in categories" :key="index" :value="category">{{ category }}</option>
-    </select>
+  <div class="home-wrapper">
+    <h1 class="home-wrapper__title">Welcome to the Public API's</h1>
+    <h3 class="home-wrapper__subtitle">Here's a list of all available APIs</h3>
+
+    <div>
+      <div class="search-wrapper">
+        <input type="text" v-model="search" placeholder="Search API ..." class="search-wrapper__input" />
+        <select name="" id="" v-model="selectedCategory" class="search-wrapper__select">
+          <option disabled value="">Filter by category</option>
+          <option v-for="(category, index) in categories" :key="index" :value="category">{{ category }}</option>
+        </select>
+      </div>
+      <ItemsList :items="searchResult" />
+    </div>
+
   </div>
-  <ItemsList :items="searchResult" />
+
 </template>
+
+<style lang="scss" scoped>
+@import "@/assets/styles/main.scss";
+
+@mixin input {
+  border-radius: 13px;
+  border: none;
+  margin-bottom: 1rem;
+  padding: 0 15px;
+  color: $inputTextColor;
+  box-sizing: border-box;
+}
+
+.search-wrapper {
+  @include flexbox(column, space-between, flex-start);
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+  }
+
+  &__input {
+    width: 70%;
+    height: 50px;
+    @include input();
+
+    @media screen and (max-width: 927px) {
+      width: 100%;
+    }
+  }
+
+  &__select {
+    width: 26%;
+    height: 50px;
+    @include input();
+
+    @media screen and (max-width: 927px) {
+      width: 100%;
+    }
+  }
+}
+</style>

@@ -1,0 +1,30 @@
+:root {
+--black: #2a2a2a;
+--black-transparent: rgb(246 247 248);
+--dark-grey:#7B7B7B;
+--grey: #647383;
+--light-grey: #F6F6F6;
+--white: #ffffff;
+--green: #00c58e;
+}
+
+$bodyBgColor: var(--light-grey);
+
+$baseText: var(--dark-grey);
+$baseTextMedium: var(--grey);
+$baseTextLight: var(--white);
+$accentTextColor: var(--green);
+
+$categoryTagBg: var(--light-grey);
+$categoryTagColor: var(--black);
+
+$itemTitleColor: var(--black);
+$itemCopyColor: var(--grey);
+
+$linkBg: var(--green);
+$linkTextColor: var(--white);
+
+$tokenColor: var(--dark-grey);
+
+$inputBorderColor: var(--green);
+$inputTextColor: var(--dark-grey);
