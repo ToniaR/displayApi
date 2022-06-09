@@ -75,15 +75,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@/assets/styles/main.scss";
 
-@mixin input {
-  border-radius: 13px;
-  border: none;
-  margin-bottom: 1rem;
-  padding: 0 15px;
-  color: $inputTextColor;
-  box-sizing: border-box;
-}
-
 .search-wrapper {
   @include flexbox(column, space-between, flex-start);
 
